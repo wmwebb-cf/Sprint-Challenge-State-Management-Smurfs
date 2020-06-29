@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import {SmurfProvider} from "./SmurfContext";
+import SmurfList from "./SmurfList";
 
 
 class App extends Component {
