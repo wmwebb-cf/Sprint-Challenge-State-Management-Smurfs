@@ -1,19 +1,25 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./App.css";
-import {SmurfProvider} from "./SmurfContext";
 import SmurfList from "./SmurfList";
+import SmurfForm from "./SmurfForm";
+import { SmurfContext } from "./SmurfContext";
 
 
-class App extends Component {
-  render() {
-    return (
+
+const App = () => {
+  const [smurfs, setSmurfs] = useState([]);
+
+  return (
+
+    <SmurfContext.Provider value={{smurfs,setSmurfs}}>
       <div className="App">
-        <SmurfProvider>
-          <SmurfList />
-        </SmurfProvider>
+        <SmurfList />
+        <SmurfForm /> 
       </div>
-    );
-  }
+    </SmurfContext.Provider>
+  
+    
+  );
 }
 
 export default App;
